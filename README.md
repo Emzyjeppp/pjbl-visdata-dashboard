@@ -7,6 +7,7 @@ Data yang digunakan disarikan dari statistik resmi Badan Pusat Statistik (BPS) D
 ---
 
 ## Modul Aplikasi
+
 Aplikasi ini berjalan sebagai Single Page Application (SPA) dengan lima modul utama:
 
 1. **Dashboard V1 (Rancangan Awal)**: Berisi purwarupa awal dengan filter dropdown sederhana, tata letak standar, dan kontras warna rendah.
@@ -18,17 +19,20 @@ Aplikasi ini berjalan sebagai Single Page Application (SPA) dengan lima modul ut
 ---
 
 ## Spesifikasi Teknis
-* **Bahasa & Gaya**: HTML5, CSS3, JavaScript (ES6+).
-* **Library Grafik**: Chart.js via CDN.
-* **Mutu Kode**: Lolos pengujian linter ESLint dan formatter Prettier secara penuh.
-* **Peta Spasial**: Peta skematik berbasis SVG terintegrasi langsung pada kode frontend.
+
+- **Bahasa & Gaya**: HTML5, CSS3, JavaScript (ES6+).
+- **Library Grafik**: Chart.js via CDN.
+- **Mutu Kode**: Lolos pengujian linter ESLint dan formatter Prettier secara penuh.
+- **Peta Spasial**: Peta skematik berbasis SVG terintegrasi langsung pada kode frontend.
 
 ---
 
 ## Cara Menjalankan
+
 Aplikasi ini serverless dan berjalan langsung di browser tanpa perlu instalasi database.
 
 1. **Unduh Proyek**:
+
    ```bash
    git clone https://github.com/Emzyjeppp/pjbl-visdata-dashboard.git
    cd pjbl-visdata-dashboard
@@ -43,9 +47,11 @@ Aplikasi ini serverless dan berjalan langsung di browser tanpa perlu instalasi d
 ---
 
 ## Kriteria Pengujian Usability
+
 Survei mengukur lima aspek kelayakan visualisasi:
-* **Akurasi Data**: Kesesuaian visualisasi dengan kondisi lalu lintas riil.
-* **Kemudahan Navigasi**: Kemudahan berpindah antar modul halaman.
-* **Fungsionalitas Filter**: Kecepatan dan kemudahan penyaringan data spasial lewat peta.
-* **Kejelasan Visual**: Keterbacaan teks, kontras warna, dan kejelasan grafik.
-* **Kecepatan Performa**: Waktu respons rendering grafik tanpa lag.
+
+- **Akurasi Data**: Kesesuaian visualisasi dengan kondisi lalu lintas riil.
+- **Kemudahan Navigasi**: Kemudahan berpindah antar modul halaman.
+- **Fungsionalitas Filter**: Kecepatan dan kemudahan penyaringan data spasial lewat peta.
+- **Kejelasan Visual**: Keterbacaan teks, kontras warna, dan kejelasan grafik.
+- **Kecepatan Performa**: Waktu respons rendering grafik tanpa lag.

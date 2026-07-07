@@ -144,7 +144,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
       visual: 3,
       performance: 4,
       comments:
-        "Fungsionalitas filter pada V1 sangat terbatas. Desain visualnya juga terlalu polos dan kurang menunjukkan kearifan lokal Yogyakarta. Silakan perbaiki tata letak agar grafik tidak bertumpuk dan tambahkan visualisasi berbasis peta DIY yang interaktif."
+        "Filter dropdown pada V1 kaku dan letaknya bertumpuk. Desain visual kurang menunjukkan identitas lokal Yogyakarta. Tambahkan peta wilayah DIY yang interaktif."
     },
     {
       evaluator: "Andi Saputra (Asisten Praktikum)",
@@ -155,7 +155,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
       visual: 2,
       performance: 4,
       comments:
-        "Pilihan warnanya standar sekali pada V1, membuat audiens bosan. Filter kabupaten harusnya bisa otomatis memperbarui grafik Trans Jogja juga. Penggunaan peta wilayah akan sangat membantu."
+        "Warna V1 terlalu standar. Filter kabupaten sebaiknya terintegrasi dengan data Trans Jogja. Visualisasi berbasis peta akan sangat membantu."
     },
     {
       evaluator: "Siti Rahmawati (Teman Sekelas - Kelompok 4)",
@@ -166,7 +166,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
       visual: 3,
       performance: 5,
       comments:
-        "Performa rendering grafik sudah bagus dan cepat, tapi navigasi antar data masih kaku. Menu filter kabupaten sebaiknya diganti dengan peta interaktif agar lebih mudah digunakan di laptop/HP."
+        "Rendering grafik sudah cepat, tetapi navigasi antar data masih kaku. Menu filter kabupaten sebaiknya diganti dengan klik peta."
     }
   ]
 };
