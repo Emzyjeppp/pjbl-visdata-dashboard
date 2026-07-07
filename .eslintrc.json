@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "script"
+  },
+  "globals": {
+    "Chart": "readonly",
+    "YOGYAKARTA_TRANSPORT_DATA": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "no-console": "off",
+    "eqeqeq": "error",
+    "curly": "error"
+  }
+}

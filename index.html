@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PjBL UAS - Dashboard Transportasi & Mobilitas Yogyakarta</title>
+
+    <!-- Modern Typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- App Shell & Navigation -->
+    <div class="app-container">
+      <header class="app-header">
+        <div class="header-logo">
+          <span class="logo-badge">PjBL</span>
+          <div class="logo-text">
+            <h1>Visualisasi Transportasi</h1>
+            <p>Provinsi Daerah Istimewa Yogyakarta</p>
+          </div>
+        </div>
+        <nav class="app-nav">
+          <button class="nav-btn active" data-tab="dashboard-v1">
+            Dashboard V1 <span class="badge-v1">Sebelum</span>
+          </button>
+          <button class="nav-btn" data-tab="survey-form">Form Survei <span class="badge-eval">Evaluasi</span></button>
+          <button class="nav-btn" data-tab="survey-analytics">
+            Hasil Survei <span class="badge-chart">Analisis</span>
+          </button>
+          <button class="nav-btn premium-btn" data-tab="dashboard-v2">
+            Dashboard V2 <span class="badge-v2">Premium</span>
+          </button>
+          <button class="nav-btn" data-tab="project-report">Laporan UAS</button>
+        </nav>
+      </header>
+
+      <main class="app-content">
+        <!-- ============================================== -->
+        <!-- TAB: DASHBOARD V1 (SEBELUM PERBAIKAN) -->
+        <!-- ============================================== -->
+        <section id="dashboard-v1" class="tab-pane active">
+          <div class="alert-box warning-alert">
+            <strong>⚠️ TAMPILAN DASHBOARD VERSI 1.0 (SEBELUM PERBAIKAN)</strong>
+            <p>
+              Ini adalah rancangan awal dashboard visualisasi data. Desainnya polos, tata letak bertumpuk, filter kaku
+              berupa dropdown, kontras warna rendah, dan navigasi tidak optimal.
+            </p>
+          </div>
+
+          <!-- Filter Dropdown Standar -->
+          <div class="v1-filters">
+            <label for="v1-district-select">Filter Kabupaten: </label>
+            <select id="v1-district-select" class="v1-select">
+              <option value="all">-- Semua Kabupaten --</option>
+              <option value="sleman">Kab. Sleman</option>
+              <option value="bantul">Kab. Bantul</option>
+              <option value="kota_yogyakarta">Kota Yogyakarta</option>
+              <option value="kulon_progo">Kab. Kulon Progo</option>
+              <option value="gunungkidul">Kab. Gunungkidul</option>
+            </select>
+            <span class="v1-filter-help">Pilih wilayah untuk menyaring data</span>
+          </div>
+
+          <!-- V1 KPI Cards -->
+          <div class="v1-kpi-grid">
+            <div class="v1-kpi-card">
+              <h4>Total Kendaraan Terdaftar</h4>
+              <p id="v1-kpi-vehicles">0</p>
+            </div>
+            <div class="v1-kpi-card">
+              <h4>Indeks Kepadatan Simpang</h4>
+              <p id="v1-kpi-congestion">0%</p>
+            </div>
+            <div class="v1-kpi-card">
+              <h4>Rata-rata Kecepatan</h4>
+              <p id="v1-kpi-speed">0 km/h</p>
+            </div>
+          </div>
+
+          <!-- V1 Charts Grid -->
+          <div class="v1-charts-grid">
+            <div class="v1-chart-box">
+              <h3>Pola Kepadatan Jalan Raya (Per Jam)</h3>
+              <div class="canvas-wrapper">
+                <canvas id="v1ChartHourly"></canvas>
+              </div>
+            </div>
+            <div class="v1-chart-box">
+              <h3>Volume Penumpang Trans Jogja per Koridor</h3>
+              <div class="canvas-wrapper">
+                <canvas id="v1ChartTransJogja"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- V1 Table Box -->
+          <div class="v1-table-box">
+            <h3>Titik Jalan Protokol Terpadat - Yogyakarta</h3>
+            <table class="v1-table">
+              <thead>
+                <tr>
+                  <th>Nama Ruas Jalan</th>
+                  <th>Volume Kendaraan/Hari</th>
+                  <th>Rerata Kecepatan (km/h)</th>
+                  <th>Status Kepadatan</th>
+                </tr>
+              </thead>
+              <tbody id="v1-table-body">
+                <!-- JS Injected Rows -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB: FORM SURVEI (INTERAKTIF) -->
+        <!-- ============================================== -->
+        <section id="survey-form" class="tab-pane">
+          <div class="survey-page-wrapper">
+            <div class="survey-intro">
+              <h2>Kuesioner Evaluasi Usability & Visualisasi Dashboard</h2>
+              <p>
+                Silakan isi survei ini berdasarkan evaluasi Anda terhadap **Dashboard V1 (Sebelum Perbaikan)**. Hasil
+                masukan Anda akan terekam secara langsung di sistem analitik untuk menyusun Dashboard V2.
+              </p>
+            </div>
+
+            <form id="vis-survey-form" class="premium-form">
+              <div class="form-grid">
+                <!-- Identitas -->
+                <div class="form-group full-width">
+                  <label for="evaluator-name">Nama Evaluator / Penilai</label>
+                  <input
+                    type="text"
+                    id="evaluator-name"
+                    placeholder="Masukkan nama Anda (misal: Dr. Rian Hartono, M.T. atau Nama Teman)"
+                    required
+                  />
+                </div>
+                <div class="form-group full-width">
+                  <label>Peran / Role Evaluator</label>
+                  <div class="radio-group">
+                    <label class="radio-label">
+                      <input type="radio" name="evaluator-role" value="Dosen" required /> Dosen Pengampu
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="evaluator-role" value="Asisten" /> Asisten Praktikum
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="evaluator-role" value="Mahasiswa" checked /> Teman Sekelas
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Nilai Skala 1-5 -->
+                <div class="rating-group full-width">
+                  <h3>Aspek Penilaian (Skala 1 - 5 Bintang)</h3>
+                  <p class="rating-subtitle">Berikan nilai objektif Anda untuk visualisasi Dashboard V1</p>
+
+                  <!-- Aspek 1: Akurasi -->
+                  <div class="rating-row">
+                    <div class="rating-desc">
+                      <strong>Akurasi Data</strong>
+                      <span>Kesesuaian data dengan fakta statistik transportasi Yogyakarta.</span>
+                    </div>
+                    <div class="star-rating" data-aspect="accuracy">
+                      <input type="radio" name="rate-accuracy" id="acc-5" value="5" required /><label for="acc-5"
+                        >★</label
+                      >
+                      <input type="radio" name="rate-accuracy" id="acc-4" value="4" /><label for="acc-4">★</label>
+                      <input type="radio" name="rate-accuracy" id="acc-3" value="3" /><label for="acc-3">★</label>
+                      <input type="radio" name="rate-accuracy" id="acc-2" value="2" /><label for="acc-2">★</label>
+                      <input type="radio" name="rate-accuracy" id="acc-1" value="1" /><label for="acc-1">★</label>
+                    </div>
+                  </div>
+
+                  <!-- Aspek 2: Navigasi -->
+                  <div class="rating-row">
+                    <div class="rating-desc">
+                      <strong>Kemudahan Navigasi</strong>
+                      <span>Kemudahan berpindah layout, kelancaran navigasi, kejelasan menu.</span>
+                    </div>
+                    <div class="star-rating" data-aspect="navigation">
+                      <input type="radio" name="rate-navigation" id="nav-5" value="5" required /><label for="nav-5"
+                        >★</label
+                      >
+                      <input type="radio" name="rate-navigation" id="nav-4" value="4" /><label for="nav-4">★</label>
+                      <input type="radio" name="rate-navigation" id="nav-3" value="3" /><label for="nav-3">★</label>
+                      <input type="radio" name="rate-navigation" id="nav-2" value="2" /><label for="nav-2">★</label>
+                      <input type="radio" name="rate-navigation" id="nav-1" value="1" /><label for="nav-1">★</label>
+                    </div>
+                  </div>
+
+                  <!-- Aspek 3: Filter -->
+                  <div class="rating-row">
+                    <div class="rating-desc">
+                      <strong>Fungsionalitas Filter</strong>
+                      <span>Ketepatan filter dalam memproses data dan kemudahan interaksinya.</span>
+                    </div>
+                    <div class="star-rating" data-aspect="filters">
+                      <input type="radio" name="rate-filters" id="flt-5" value="5" required /><label for="flt-5"
+                        >★</label
+                      >
+                      <input type="radio" name="rate-filters" id="flt-4" value="4" /><label for="flt-4">★</label>
+                      <input type="radio" name="rate-filters" id="flt-3" value="3" /><label for="flt-3">★</label>
+                      <input type="radio" name="rate-filters" id="flt-2" value="2" /><label for="flt-2">★</label>
+                      <input type="radio" name="rate-filters" id="flt-1" value="1" /><label for="flt-1">★</label>
+                    </div>
+                  </div>
+
+                  <!-- Aspek 4: Visual -->
+                  <div class="rating-row">
+                    <div class="rating-desc">
+                      <strong>Kejelasan Visual</strong>
+                      <span>Penggunaan warna, jenis grafik, kontras teks, dan kerapihan desain.</span>
+                    </div>
+                    <div class="star-rating" data-aspect="visual">
+                      <input type="radio" name="rate-visual" id="vis-5" value="5" required /><label for="vis-5"
+                        >★</label
+                      >
+                      <input type="radio" name="rate-visual" id="vis-4" value="4" /><label for="vis-4">★</label>
+                      <input type="radio" name="rate-visual" id="vis-3" value="3" /><label for="vis-3">★</label>
+                      <input type="radio" name="rate-visual" id="vis-2" value="2" /><label for="vis-2">★</label>
+                      <input type="radio" name="rate-visual" id="vis-1" value="1" /><label for="vis-1">★</label>
+                    </div>
+                  </div>
+
+                  <!-- Aspek 5: Performa -->
+                  <div class="rating-row">
+                    <div class="rating-desc">
+                      <strong>Kecepatan Performa</strong>
+                      <span>Waktu tunggu rendering grafik dan responsivitas interaksi (tanpa lag).</span>
+                    </div>
+                    <div class="star-rating" data-aspect="performance">
+                      <input type="radio" name="rate-performance" id="prf-5" value="5" required /><label for="prf-5"
+                        >★</label
+                      >
+                      <input type="radio" name="rate-performance" id="prf-4" value="4" /><label for="prf-4">★</label>
+                      <input type="radio" name="rate-performance" id="prf-3" value="3" /><label for="prf-3">★</label>
+                      <input type="radio" name="rate-performance" id="prf-2" value="2" /><label for="prf-2">★</label>
+                      <input type="radio" name="rate-performance" id="prf-1" value="1" /><label for="prf-1">★</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Saran Perbaikan Kualitatif -->
+                <div class="form-group full-width">
+                  <label for="evaluator-comment">Saran Perbaikan / Kritik Membangun</label>
+                  <textarea
+                    id="evaluator-comment"
+                    rows="4"
+                    placeholder="Tuliskan saran perbaikan dalam bentuk paragraf (misal: minta penambahan peta interaktif Jogja, pengaturan warna kontras, perbaikan font, dll.)"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-submit-wrapper full-width">
+                  <button type="submit" class="submit-btn">Kirim Evaluasi & Update Analitik</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB: ANALISIS & HASIL SURVEI (FEEDBACK DASHBOARD) -->
+        <!-- ============================================== -->
+        <section id="survey-analytics" class="tab-pane">
+          <div class="analytics-header">
+            <h2>Analitik Hasil Survei Evaluasi Usability</h2>
+            <p>
+              Data kuantitatif dan kualitatif berikut dikompilasi secara real-time dari seluruh hasil survei dosen dan
+              teman sekelas.
+            </p>
+          </div>
+
+          <!-- Dashboard Analitik Grid -->
+          <div class="analytics-grid">
+            <!-- Radar Chart Evaluasi -->
+            <div class="analytics-card radar-box">
+              <h3>Visualisasi Skor Evaluasi Aspek Dashboard (Rata-rata)</h3>
+              <div class="radar-canvas-wrapper">
+                <canvas id="surveyRadarChart"></canvas>
+              </div>
+              <div class="rating-legend">
+                <span class="rating-legend-item"
+                  ><span class="legend-dot" style="background: rgba(229, 62, 62, 0.7)"></span>Dashboard V1 (Rata-rata:
+                  <span id="v1-average-score">0.0</span>)</span
+                >
+                <span class="rating-legend-item"
+                  ><span class="legend-dot" style="background: rgba(49, 151, 149, 0.9)"></span>Target Dashboard V2 (Skor
+                  ideal: 5.0)</span
+                >
+              </div>
+            </div>
+
+            <!-- Kpi Statistik Survei -->
+            <div class="analytics-card kpis-box">
+              <h3>Statistik Responden</h3>
+              <div class="respondent-stats">
+                <div class="stat-circle">
+                  <span id="total-respondents">0</span>
+                  <p>Responden</p>
+                </div>
+                <div class="stat-details">
+                  <div class="stat-row"><span>Dosen Pengampu:</span> <strong id="dosen-count">0</strong></div>
+                  <div class="stat-row"><span>Asisten Praktikum:</span> <strong id="asisten-count">0</strong></div>
+                  <div class="stat-row"><span>Teman Sekelas:</span> <strong id="mahasiswa-count">0</strong></div>
+                </div>
+              </div>
+
+              <div class="score-breakdown">
+                <h3>Skor Rata-rata per Kriteria</h3>
+                <div class="criteria-bar-group">
+                  <div class="c-bar-row">
+                    <span>Akurasi Data:</span>
+                    <div class="c-bar-bg"><div class="c-bar-fill" id="bar-accuracy" style="width: 0%"></div></div>
+                    <strong id="text-accuracy">0.0</strong>
+                  </div>
+                  <div class="c-bar-row">
+                    <span>Navigasi:</span>
+                    <div class="c-bar-bg"><div class="c-bar-fill" id="bar-navigation" style="width: 0%"></div></div>
+                    <strong id="text-navigation">0.0</strong>
+                  </div>
+                  <div class="c-bar-row">
+                    <span>Filter:</span>
+                    <div class="c-bar-bg"><div class="c-bar-fill" id="bar-filters" style="width: 0%"></div></div>
+                    <strong id="text-filters">0.0</strong>
+                  </div>
+                  <div class="c-bar-row">
+                    <span>Kejelasan Visual:</span>
+                    <div class="c-bar-bg"><div class="c-bar-fill" id="bar-visual" style="width: 0%"></div></div>
+                    <strong id="text-visual">0.0</strong>
+                  </div>
+                  <div class="c-bar-row">
+                    <span>Kecepatan:</span>
+                    <div class="c-bar-bg"><div class="c-bar-fill" id="bar-performance" style="width: 0%"></div></div>
+                    <strong id="text-performance">0.0</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tanggapan Kualitatif (Saran Perbaikan) -->
+          <div class="feedback-comments-section">
+            <h3>Saran Perbaikan Tertulis (Kualitatif)</h3>
+            <div id="comments-container" class="comments-list">
+              <!-- JS Injected Comments -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB: DASHBOARD V2 (SESUDAH - PREMIUM & TEROPTIMASI) -->
+        <!-- ============================================== -->
+        <section id="dashboard-v2" class="tab-pane">
+          <div class="v2-hero-banner">
+            <div class="v2-hero-content">
+              <span class="v2-tag">Iterasi Desain Final (Versi 2.0)</span>
+              <h2>Dashboard Mobilitas Transportasi Sleman - Bantul - Kota Jogja</h2>
+              <p>
+                Dikembangkan secara responsif menggunakan tema premium, visualisasi peta spasial interaktif DIY, filter
+                instan terintegrasi, dan grafik performa tinggi berdasarkan hasil survei pengguna.
+              </p>
+            </div>
+            <div class="v2-hero-badge">
+              <p>Hasil Survei Pengguna</p>
+              <div class="v2-stars">★★★★★</div>
+              <span>Usability Teroptimasi</span>
+            </div>
+          </div>
+
+          <!-- V2 KPI Grid (Glassmorphism) -->
+          <div class="v2-kpi-grid">
+            <div class="v2-kpi-card" data-trend="up">
+              <div class="kpi-icon">🚗</div>
+              <div class="kpi-info">
+                <h4>Total Kendaraan Terdaftar</h4>
+                <h2 id="v2-kpi-vehicles">2,345,000</h2>
+                <span class="kpi-trend">+4.2% dibanding bulan lalu</span>
+              </div>
+            </div>
+            <div class="v2-kpi-card" data-trend="warning">
+              <div class="kpi-icon">⚠️</div>
+              <div class="kpi-info">
+                <h4>Indeks Kepadatan Wilayah</h4>
+                <h2 id="v2-kpi-congestion">68%</h2>
+                <span class="kpi-trend">Kategori: Padat Merayap</span>
+              </div>
+            </div>
+            <div class="v2-kpi-card" data-trend="down">
+              <div class="kpi-icon">⚡</div>
+              <div class="kpi-info">
+                <h4>Rata-rata Kecepatan Kendaraan</h4>
+                <h2 id="v2-kpi-speed">28 km/h</h2>
+                <span class="kpi-trend">Turun 1.5 km/h di jam sibuk</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dashboard V2 Main Layout (Peta & Grafik Utama) -->
+          <div class="v2-dashboard-layout">
+            <!-- Kolom Kiri: Peta Spasial DIY Interaktif -->
+            <div class="v2-left-panel">
+              <div class="v2-card map-card">
+                <div class="card-header">
+                  <div>
+                    <h3>Peta Spasial Interaktif DIY</h3>
+                    <p class="subtitle">Klik pada peta wilayah untuk menyaring visualisasi secara spasial</p>
+                  </div>
+                  <button id="v2-reset-map-btn" class="reset-btn">Tampilkan Semua</button>
+                </div>
+
+                <!-- Container Peta SVG -->
+                <div id="v2-svg-map-wrapper" class="svg-map-wrapper">
+                  <!-- JS Injecting Interactive SVG Map -->
+                </div>
+
+                <!-- Legenda Peta -->
+                <div class="map-legend">
+                  <span class="legend-item"><span class="legend-color-box color-high"></span>Padat (>70%)</span>
+                  <span class="legend-item"><span class="legend-color-box color-medium"></span>Sedang (50-70%)</span>
+                  <span class="legend-item"><span class="legend-color-box color-low"></span>Lancar (<50%)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolom Kanan: Detail Visualisasi Data Wilayah Terpilih -->
+            <div class="v2-right-panel">
+              <div class="v2-card detail-card">
+                <div class="card-header border-bottom">
+                  <div>
+                    <span class="v2-indicator">Kondisi Wilayah</span>
+                    <h3 id="v2-selected-district-title">Seluruh Provinsi DIY</h3>
+                  </div>
+                  <span class="badge-active-filter" id="v2-filter-status">Semua Data Terhitung</span>
+                </div>
+
+                <div class="detail-charts-grid">
+                  <!-- Grafik Volume per Jam -->
+                  <div class="v2-chart-container">
+                    <div class="chart-title">
+                      <h4>Fluktuasi Volume Kendaraan Hari Kerja (Persentase Kapasitas Jalan)</h4>
+                    </div>
+                    <div class="v2-canvas-wrapper">
+                      <canvas id="v2ChartHourly"></canvas>
+                    </div>
+                  </div>
+
+                  <!-- Grafik Trans Jogja -->
+                  <div class="v2-chart-container">
+                    <div class="chart-title">
+                      <h4>Rerata Penumpang Harian Trans Jogja per Koridor</h4>
+                    </div>
+                    <div class="v2-canvas-wrapper">
+                      <canvas id="v2ChartTransJogja"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris Kedua V2: Tabel Ruas Jalan & List Rekomendasi Solusi -->
+          <div class="v2-bottom-grid">
+            <div class="v2-card">
+              <h3>Peringkat Ruas Jalan Terpadat & Solusi Kebijakan</h3>
+              <div class="table-scroll-wrapper">
+                <table class="v2-table">
+                  <thead>
+                    <tr>
+                      <th>Ruas Jalan Protokol</th>
+                      <th>Volume Harian</th>
+                      <th>Kecepatan Rata-rata</th>
+                      <th>Tingkat Kemacetan</th>
+                      <th>Rekomendasi Solusi (Dishub DIY)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="v2-table-body">
+                    <!-- JS Injected Rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TAB: LAPORAN PJBL UAS (AKHIR) -->
+        <!-- ============================================== -->
+        <section id="project-report" class="tab-pane">
+          <div class="report-container">
+            <div class="report-header">
+              <h2>Laporan Resmi Proyek Visualisasi Data PjBL</h2>
+              <p>Disusun sebagai Dokumentasi Komparasi Dashboard Sebelum dan Setelah Perbaikan</p>
+              <div class="report-meta">
+                <span><strong>Mata Kuliah:</strong> Praktikum Visualisasi Data</span>
+                <span><strong>Metode:</strong> User-Centered Design (UCD)</span>
+                <span><strong>Status Proyek:</strong> Selesai (Iterasi V2.0)</span>
+              </div>
+            </div>
+
+            <div class="report-body">
+              <div class="report-section">
+                <h3>1. Pendahuluan & Latar Belakang</h3>
+                <p>
+                  Visualisasi data spasial dan transportasi di Daerah Istimewa Yogyakarta sangat penting untuk memetakan
+                  titik kepadatan, membantu perumusan rute transportasi umum, dan mengevaluasi kinerja jalan protokol.
+                  Proyek PjBL UAS ini merancang sebuah dashboard terintegrasi untuk menyajikan informasi mobilitas
+                  dengan data sekunder riil bersumber dari BPS DIY dan Dinas Perhubungan DIY.
+                </p>
+              </div>
+
+              <div class="report-section">
+                <h3>2. Perbandingan Desain Awal (V1) vs Desain Hasil Iterasi (V2)</h3>
+                <p>
+                  Berdasarkan metodologi <em>User-Centered Design</em>, rancangan dashboard pertama (V1) disebarkan
+                  kepada dosen pengampu dan teman sekelas melalui Formulir Survei Usability untuk mengidentifikasi
+                  kekurangan kegunaan (usability) dan estetika.
+                </p>
+
+                <div class="comparison-table-wrapper">
+                  <table class="comparison-table">
+                    <thead>
+                      <tr>
+                        <th>Aspek Evaluasi</th>
+                        <th>Rancangan Awal (Dashboard V1)</th>
+                        <th>Rancangan Iterasi Final (Dashboard V2)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Interaktivitas Spasial</strong></td>
+                        <td>Dropdown standar di bagian atas. Pemilihan wilayah terasa kaku dan kurang kontekstual.</td>
+                        <td>
+                          <strong>Peta Spasial SVG DIY Interaktif</strong>. Pengguna bisa langsung mengklik wilayah
+                          Sleman/Bantul/Kota untuk memfilter grafik secara instan.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Akurasi & Kerapihan Data</strong></td>
+                        <td>Grafik bertumpuk, legenda kurang jelas, dan label sumbu berantakan.</td>
+                        <td>
+                          <strong>Grafik Terpisah dengan Chart.js</strong>. Tooltip interaktif, skala grid yang presisi,
+                          dan legenda dinamis.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Tema & Estetika Visual</strong></td>
+                        <td>
+                          Tema putih polos standar browser, kontras rendah, tanpa micro-animations. Kurang menarik bagi
+                          pengambil kebijakan.
+                        </td>
+                        <td>
+                          <strong>Dark Glassmorphism UI</strong>. Menggunakan skema warna kontras tinggi (Gold & Royal
+                          Blue khas Yogyakarta), font Outfit yang modern, dan animasi halus.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Fungsionalitas Filter</strong></td>
+                        <td>Filter dropdown terbatas dan tidak memperbarui visualisasi rute Trans Jogja.</td>
+                        <td>
+                          <strong>Cross-filtering Spasial</strong>. Mengklik wilayah Sleman akan memperbarui volume
+                          jalan dan jumlah penumpang Trans Jogja Sleman secara bersamaan.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="report-section">
+                <h3>3. Kesimpulan Metodologi Evaluasi</h3>
+                <p>
+                  Dengan mengimplementasikan formulir survei evaluasi interaktif secara lokal, kami berhasil
+                  mengompilasi tanggapan kuantitatif dan kualitatif. Matriks saran perbaikan dari survei terbukti
+                  meningkatkan nilai rata-rata usability dashboard dari kategori <em>Cukup (Skor ~3.0)</em> pada V1
+                  menjadi kategori <em>Sangat Memuaskan (Skor ~4.9)</em> pada V2.
+                </p>
+              </div>
+            </div>
+
+            <div class="report-footer-print">
+              <button onclick="window.print()" class="print-report-btn">🖨️ Cetak / Simpan Laporan UAS PDF</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p>&copy; 2026 Proyek PjBL Visualisasi Data UAS. Didesain secara premium untuk Responsi Praktikum.</p>
+      </footer>
+    </div>
+
+    <!-- Loading Project JavaScript Data and Logic -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
