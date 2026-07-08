@@ -1380,3 +1380,45 @@ body {
     color: #333;
   }
 }
+
+/* ============================================== */
+/* EVALUATOR / ADMIN MODE SWITCHER */
+/* ============================================== */
+.app-nav {
+  display: none !important; /* Hide navigation tabs by default (Public Mode) */
+}
+
+.admin-active .app-nav {
+  display: flex !important; /* Show navigation tabs in Evaluator Mode */
+}
+
+.admin-btn {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--accent-blue);
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-right: 1rem;
+}
+
+.admin-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--text-primary);
+  border-color: var(--accent-blue);
+}
+
+.admin-active .admin-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: var(--accent-red);
+}
+
+.admin-active .admin-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: var(--accent-red);
+}

@@ -88,6 +88,32 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Admin/Evaluator Mode Toggle Event
+    const adminToggleBtn = document.getElementById("admin-toggle-btn");
+    const appContainer = document.querySelector(".app-container");
+
+    if (adminToggleBtn) {
+      adminToggleBtn.addEventListener("click", () => {
+        const isAdminActive = appContainer.classList.contains("admin-active");
+        if (!isAdminActive) {
+          const password = prompt("Masukkan passcode untuk mengaktifkan Mode Evaluator (UAS):", "");
+          if (password === "admin" || password === "1234") {
+            appContainer.classList.add("admin-active");
+            adminToggleBtn.innerHTML = "🔒 Kunci Dashboard";
+            // Switch to Dashboard V1 for evaluation context
+            switchTab("dashboard-v1");
+          } else if (password !== null) {
+            alert("Passcode salah! Gunakan passcode 'admin' untuk demo.");
+          }
+        } else {
+          appContainer.classList.remove("admin-active");
+          adminToggleBtn.innerHTML = "🔑 Mode Evaluator";
+          // Revert back to V2 Public mode
+          switchTab("dashboard-v2");
+        }
+      });
+    }
+
     // V2 Reset Map Event
     if (v2ResetMapBtn) {
       v2ResetMapBtn.addEventListener("click", () => {
