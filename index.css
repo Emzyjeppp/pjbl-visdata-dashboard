@@ -1422,3 +1422,23 @@ body {
   background: rgba(239, 68, 68, 0.2);
   border-color: var(--accent-red);
 }
+
+.fullscreen-btn {
+  background: rgba(229, 184, 59, 0.1);
+  border: 1px solid rgba(229, 184, 59, 0.3);
+  color: var(--accent-gold);
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-right: 0.5rem;
+}
+
+.fullscreen-btn:hover {
+  background: rgba(229, 184, 59, 0.2);
+  color: var(--text-primary);
+  border-color: var(--accent-gold);
+}

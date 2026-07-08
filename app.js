@@ -88,6 +88,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Fullscreen Toggle Event
+    const fullscreenBtn = document.getElementById("fullscreen-btn");
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch((err) => {
+            console.error(`Gagal masuk mode layar penuh: ${err.message}`);
+          });
+          fullscreenBtn.innerHTML = "📺 Keluar Layar Penuh";
+        } else {
+          document.exitFullscreen();
+          fullscreenBtn.innerHTML = "📺 Layar Penuh";
+        }
+      });
+    }
+
+    document.addEventListener("fullscreenchange", () => {
+      if (!document.fullscreenElement && fullscreenBtn) {
+        fullscreenBtn.innerHTML = "📺 Layar Penuh";
+      }
+    });
+
     // Admin/Evaluator Mode Toggle Event
     const adminToggleBtn = document.getElementById("admin-toggle-btn");
     const appContainer = document.querySelector(".app-container");
