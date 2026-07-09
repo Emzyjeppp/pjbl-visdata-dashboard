@@ -41,7 +41,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
   districts: {
     all: {
       name: "Seluruh DIY",
-      totalVehicles: 2345000,
+      totalVehicles: 3356480,
       congestionIndex: 68,
       averageSpeed: 28,
       topCongestedRoads: [
@@ -52,11 +52,11 @@ const YOGYAKARTA_TRANSPORT_DATA = {
         { roadName: "Jl. Parangtritis", volume: 85000, speed: 26, level: "Macet Ringan" }
       ],
       hourlyVolume: [15, 8, 5, 12, 35, 78, 95, 88, 70, 65, 68, 72, 75, 70, 78, 85, 98, 92, 78, 60, 48, 38, 25, 18], // Persentase kapasitas jalan (0-100%)
-      transJogjaPassengerCount: [12400, 14200, 9800, 8500, 11000, 11500, 10200, 7400] // K1A, K2A, K3A, K4A, K1B, K2B, K3B, K4B
+      transJogjaPassengerCount: [4200, 4800, 3500, 2900, 3800, 4000, 3400, 2778] // K1A, K2A, K3A, K4A, K1B, K2B, K3B, K4B
     },
     sleman: {
       name: "Sleman",
-      totalVehicles: 925000,
+      totalVehicles: 1170000,
       congestionIndex: 72,
       averageSpeed: 25,
       topCongestedRoads: [
@@ -66,11 +66,11 @@ const YOGYAKARTA_TRANSPORT_DATA = {
         { roadName: "Jl. Kaliurang", volume: 75000, speed: 18, level: "Sangat Padat" }
       ],
       hourlyVolume: [12, 6, 4, 10, 30, 85, 98, 90, 65, 60, 62, 68, 70, 65, 75, 82, 95, 90, 75, 55, 45, 35, 22, 15],
-      transJogjaPassengerCount: [6200, 4500, 3800, 2100, 5200, 3900, 4100, 1800]
+      transJogjaPassengerCount: [1600, 1800, 1300, 1100, 1400, 1500, 1200, 1000]
     },
     bantul: {
       name: "Bantul",
-      totalVehicles: 580000,
+      totalVehicles: 791910,
       congestionIndex: 55,
       averageSpeed: 32,
       topCongestedRoads: [
@@ -79,11 +79,11 @@ const YOGYAKARTA_TRANSPORT_DATA = {
         { roadName: "Jl. Bantul", volume: 60000, speed: 30, level: "Lancar" }
       ],
       hourlyVolume: [10, 5, 3, 8, 25, 70, 88, 80, 60, 58, 60, 65, 68, 62, 70, 78, 90, 85, 70, 50, 40, 30, 20, 12],
-      transJogjaPassengerCount: [2100, 3200, 2500, 1800, 1900, 2800, 2200, 1500]
+      transJogjaPassengerCount: [800, 900, 700, 600, 800, 800, 700, 600]
     },
     kota_yogyakarta: {
       name: "Kota Yogyakarta",
-      totalVehicles: 480000,
+      totalVehicles: 716760,
       congestionIndex: 85,
       averageSpeed: 16,
       topCongestedRoads: [
@@ -93,11 +93,11 @@ const YOGYAKARTA_TRANSPORT_DATA = {
         { roadName: "Jl. Urip Sumoharjo", volume: 75000, speed: 14, level: "Sangat Padat" }
       ],
       hourlyVolume: [20, 12, 8, 15, 45, 90, 99, 95, 85, 80, 82, 85, 88, 85, 90, 95, 99, 98, 92, 80, 65, 50, 35, 25],
-      transJogjaPassengerCount: [11500, 12800, 8900, 7600, 9800, 10500, 9100, 6800]
+      transJogjaPassengerCount: [1650, 1950, 1350, 1050, 1450, 1550, 1350, 1050]
     },
     kulon_progo: {
       name: "Kulon Progo",
-      totalVehicles: 210000,
+      totalVehicles: 296510,
       congestionIndex: 35,
       averageSpeed: 42,
       topCongestedRoads: [
@@ -105,11 +105,11 @@ const YOGYAKARTA_TRANSPORT_DATA = {
         { roadName: "Jl. Daendels (Jalur Pantai Selatan)", volume: 32000, speed: 50, level: "Lancar" }
       ],
       hourlyVolume: [8, 4, 2, 6, 18, 55, 75, 68, 50, 48, 50, 52, 55, 50, 58, 62, 78, 70, 58, 42, 32, 22, 15, 10],
-      transJogjaPassengerCount: [800, 1200, 900, 500, 700, 1100, 800, 400]
+      transJogjaPassengerCount: [100, 100, 100, 100, 100, 100, 100, 78]
     },
     gunungkidul: {
       name: "Gunungkidul",
-      totalVehicles: 150000,
+      totalVehicles: 381300,
       congestionIndex: 30,
       averageSpeed: 45,
       topCongestedRoads: [
@@ -117,7 +117,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
         { roadName: "Jl. Baron", volume: 28000, speed: 45, level: "Lancar" }
       ],
       hourlyVolume: [5, 2, 1, 4, 12, 45, 65, 58, 45, 42, 45, 48, 50, 46, 52, 58, 70, 62, 50, 35, 25, 18, 10, 6],
-      transJogjaPassengerCount: [300, 500, 400, 200, 300, 400, 300, 100]
+      transJogjaPassengerCount: [50, 50, 50, 50, 50, 50, 50, 50]
     }
   },
 
