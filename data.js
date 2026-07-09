@@ -41,7 +41,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
   districts: {
     all: {
       name: "Seluruh DIY",
-      totalVehicles: 3356480,
+      totalVehicles: 3566423,
       congestionIndex: 68,
       averageSpeed: 28,
       topCongestedRoads: [
@@ -56,7 +56,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
     },
     sleman: {
       name: "Sleman",
-      totalVehicles: 1170000,
+      totalVehicles: 1345363,
       congestionIndex: 72,
       averageSpeed: 25,
       topCongestedRoads: [
@@ -70,7 +70,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
     },
     bantul: {
       name: "Bantul",
-      totalVehicles: 791910,
+      totalVehicles: 929440,
       congestionIndex: 55,
       averageSpeed: 32,
       topCongestedRoads: [
@@ -83,7 +83,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
     },
     kota_yogyakarta: {
       name: "Kota Yogyakarta",
-      totalVehicles: 716760,
+      totalVehicles: 622190,
       congestionIndex: 85,
       averageSpeed: 16,
       topCongestedRoads: [
@@ -97,7 +97,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
     },
     kulon_progo: {
       name: "Kulon Progo",
-      totalVehicles: 296510,
+      totalVehicles: 286248,
       congestionIndex: 35,
       averageSpeed: 42,
       topCongestedRoads: [
@@ -109,7 +109,7 @@ const YOGYAKARTA_TRANSPORT_DATA = {
     },
     gunungkidul: {
       name: "Gunungkidul",
-      totalVehicles: 381300,
+      totalVehicles: 383182,
       congestionIndex: 30,
       averageSpeed: 45,
       topCongestedRoads: [
