@@ -1442,3 +1442,171 @@ body {
   color: var(--text-primary);
   border-color: var(--accent-gold);
 }
+
+/* ============================================== */
+/* MOBILE RESPONSIVENESS (MAX-WIDTH: 768PX) */
+/* ============================================== */
+@media (max-width: 768px) {
+  /* Header Layout */
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .header-logo {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .logo-text h1 {
+    font-size: 1.25rem;
+  }
+
+  .logo-text p {
+    font-size: 0.75rem;
+  }
+
+  /* Fullscreen & Admin Button Layout Grouping */
+  #fullscreen-btn,
+  #admin-toggle-btn {
+    width: 100%;
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .app-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+  }
+
+  .nav-btn {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.75rem;
+    flex: 1 1 calc(50% - 0.4rem); /* Grid-like navigation buttons on mobile */
+    min-width: 110px;
+    justify-content: center;
+  }
+
+  /* Hero Banner V2 */
+  .v2-hero-banner {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  .v2-hero-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .v2-hero-content p {
+    font-size: 0.8rem;
+  }
+
+  .v2-hero-badge {
+    align-self: center;
+    width: 100%;
+    max-width: 280px;
+    padding: 0.6rem;
+  }
+
+  /* KPI Grids stacking */
+  .v1-kpi-grid,
+  .v2-kpi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem;
+  }
+
+  .v2-kpi-card {
+    padding: 1rem;
+  }
+
+  /* SVG Map height limiting */
+  .svg-map-wrapper {
+    height: 280px;
+  }
+
+  /* Main charts grid */
+  .v1-charts-grid,
+  .detail-charts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .v1-chart-box,
+  .v2-chart-container {
+    padding: 0.8rem;
+  }
+
+  .canvas-wrapper,
+  .v2-canvas-wrapper {
+    height: 220px;
+  }
+
+  /* Tables responsiveness */
+  .table-scroll-wrapper,
+  .comparison-table-wrapper {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .v1-table,
+  .v2-table,
+  .comparison-table {
+    font-size: 0.75rem;
+    min-width: 550px; /* Force table scrolling rather than squeezing columns */
+  }
+
+  /* Form and Survey layouts */
+  .premium-form {
+    padding: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem;
+  }
+
+  .form-group,
+  .rating-group,
+  .form-submit-wrapper {
+    grid-column: span 1 / span 1 !important;
+  }
+
+  .rating-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.8rem 0;
+  }
+
+  .star-rating {
+    align-self: flex-start;
+  }
+
+  /* Report Layout */
+  .report-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+  }
+
+  .report-container {
+    padding: 1.2rem;
+  }
+
+  .report-header h2 {
+    font-size: 1.3rem;
+  }
+}
