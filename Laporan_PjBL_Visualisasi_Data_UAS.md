@@ -110,7 +110,7 @@ Daerah Istimewa Yogyakarta (DIY) merupakan salah satu provinsi di Indonesia deng
 
 Selama ini, data statistik mobilitas (seperti total kendaraan terdaftar, indeks kepadatan ruas jalan, dan rata-rata jumlah penumpang angkutan umum massal Trans Jogja) dipublikasikan secara terpisah dalam dokumen teks PDF yang tebal, seperti buku _Transportasi Dalam Angka (TDA)_ oleh Dishub DIY atau buku statistik BPS DIY. Format penyajian statis ini menyulitkan pengguna dalam menangkap relasi data spasial secara cepat dan intuitif.
 
-Oleh karena itu, proyek PjBL ini bertujuan untuk mengintegrasikan data sekunder riil tersebut ke dalam sebuah Dashboard Visualisasi Data Interaktif berbasis web. Melalui pendekatan _User-Centered Design_ (UCD), dashboard awal (V1) yang dinilai kaku dan membingungkan direkonstruksi menjadi dashboard yang ramah pengguna (V2) dengan penambahan Peta Spasial SVG interaktif dan koordinasi grafik dinamis guna meningkatkan kegunaan (_usability_) sistem.
+Oleh karena itu, proyek PjBL ini bertujuan untuk mengintegrasikan data sekunder riil tersebut ke dalam sebuah Dashboard Visualisasi Data Interaktif berbasis web. Data volume kendaraan didasarkan pada publikasi Badan Pusat Statistik DIY (https://yogyakarta.bps.go.id), sedangkan data kemacetan, kecepatan, dan penumpang Trans Jogja bersumber dari sistem informasi Dinas Perhubungan DIY (https://dishub.jogjaprov.go.id). Melalui pendekatan _User-Centered Design_ (UCD), dashboard awal (V1) yang dinilai kaku dan membingungkan direkonstruksi menjadi dashboard yang ramah pengguna (V2) dengan penambahan Peta Spasial SVG interaktif dan koordinasi grafik dinamis guna meningkatkan kegunaan (_usability_) sistem.
 
 ### 1.2 Rumusan Masalah
 
@@ -142,11 +142,11 @@ Ruang lingkup proyek visualisasi data ini dibatasi oleh beberapa ketentuan:
 
 ### 2.1 User-Centered Design (UCD)
 
-_User-Centered Design_ (UCD) adalah metodologi perancangan antarmuka pengguna yang memposisikan kebutuhan, batasan, dan perilaku pengguna akhir sebagai pusat dari setiap keputusan desain. Proses UCD melibatkan siklus analisis kebutuhan, desain alternatif, pembuatan prototipe, dan evaluasi kegunaan secara berulang (_iterative design_). Melalui pendekatan ini, pengembang dapat menjamin produk akhir mudah dioperasikan dan meminimalisir kesalahan interpretasi data.
+_User-Centered Design_ (UCD) adalah metodologi perancangan antarmuka pengguna yang memposisikan kebutuhan, batasan, dan perilaku pengguna akhir sebagai pusat dari setiap keputusan desain. Teori dan prinsip tahapan UCD ini diadopsi dari standar internasional Interaction Design Foundation (https://www.interaction-design.org). Proses UCD melibatkan siklus analisis kebutuhan, desain alternatif, pembuatan prototipe, dan evaluasi kegunaan secara berulang (_iterative design_). Melalui pendekatan ini, pengembang dapat menjamin produk akhir mudah dioperasikan dan meminimalisir kesalahan interpretasi data.
 
 ### 2.2 Usability Testing & Kuesioner Usability
 
-_Usability Testing_ adalah metode pengujian untuk mengukur seberapa mudah suatu sistem digunakan oleh pengguna akhir. Sesuai lembar kuesioner evaluasi UAS, terdapat 5 kriteria utama skala likert (1-5) yang dinilai:
+_Usability Testing_ adalah metode pengujian untuk mengukur seberapa mudah suatu sistem digunakan oleh pengguna akhir. Metodologi pengujian usability ini merujuk pada standar industri yang ditetapkan oleh Nielsen Norman Group (https://www.nngroup.com). Sesuai lembar kuesioner evaluasi UAS, terdapat 5 kriteria utama skala likert (1-5) yang dinilai:
 
 1.  **Akurasi Data**: Kesesuaian informasi di layar dengan data riil atau sumber terpercaya.
 2.  **Kemudahan Navigasi**: Kecepatan menemukan KPI utama dalam waktu kurang dari 5 detik.
@@ -160,7 +160,7 @@ Data spasial merepresentasikan posisi geografis dari suatu objek. Penggunaan for
 
 ### 2.4 Chart.js & Visualisasi Interaktif
 
-Chart.js adalah pustaka JavaScript berbasis kanvas HTML5 yang ringan dan responsif untuk merender bagan statistik. Dalam proyek ini, Chart.js digunakan untuk memvisualisasikan data runtun waktu (_time-series_) fluktuasi volume jalan raya menggunakan _Line Chart_ dan sebaran penumpang koridor Trans Jogja menggunakan _Bar Chart_.
+Chart.js adalah pustaka JavaScript berbasis kanvas HTML5 yang ringan dan responsif untuk merender bagan statistik. Panduan dan konfigurasi rendering grafik interaktif merujuk pada dokumentasi resmi Chart.js (https://www.chartjs.org/docs). Dalam proyek ini, Chart.js digunakan untuk memvisualisasikan data runtun waktu (_time-series_) fluktuasi volume jalan raya menggunakan _Line Chart_ dan sebaran penumpang koridor Trans Jogja menggunakan _Bar Chart_.
 
 <div style="page-break-after: always;"></div>
 
@@ -256,7 +256,10 @@ Beberapa saran yang dapat diajukan untuk pengembangan dashboard di masa depan me
 
 ## DAFTAR PUSTAKA
 
-1.  Dinas Perhubungan DI Yogyakarta, 2025, _Buku Laporan Transportasi Dalam Angka 2025_, Dinas Perhubungan DIY, Yogyakarta.
+1.  Dinas Perhubungan DI Yogyakarta, 2025, _Buku Laporan Transportasi Dalam Angka 2025_, Dinas Perhubungan DIY, Yogyakarta. https://dishub.jogjaprov.go.id/ (diakses pada 9 Juli 2026).
 2.  Badan Pusat Statistik DI Yogyakarta, 2025, _Provinsi DI Yogyakarta Dalam Angka 2025_, BPS DIY, Yogyakarta.
-3.  Badan Pusat Statistik DI Yogyakarta, 2025, _Jumlah Kendaraan Bermotor Menurut Kabupaten/Kota dan Jenis Kendaraan di Provinsi DI Yogyakarta_, https://yogyakarta.bps.go.id/ (diakses pada 9 Juli 2026 pukul 15.30 WIB).
-4.  Stallings, William, 2020, _Computer Organization and Architecture: Designing for Performance_, 11th ed., Pearson, Boston.
+3.  Badan Pusat Statistik DI Yogyakarta, 2025, _Jumlah Kendaraan Bermotor Menurut Kabupaten/Kota dan Jenis Kendaraan di Provinsi DI Yogyakarta_, https://yogyakarta.bps.go.id/ (diakses pada 9 Juli 2026).
+4.  Interaction Design Foundation, 2026, _What is User-Centered Design (UCD)?_, Interaction Design Foundation. https://www.interaction-design.org/literature/topics/user-centered-design (diakses pada 12 Juli 2026).
+5.  Nielsen Norman Group, 2026, _Usability Testing 101_, Nielsen Norman Group. https://www.nngroup.com/articles/usability-testing-101/ (diakses pada 12 Juli 2026).
+6.  Chart.js Official, 2026, _Chart.js Documentation_, Chart.js. https://www.chartjs.org/docs/ (diakses pada 12 Juli 2026).
+7.  Stallings, William, 2020, _Computer Organization and Architecture: Designing for Performance_, 11th ed., Pearson, Boston.
