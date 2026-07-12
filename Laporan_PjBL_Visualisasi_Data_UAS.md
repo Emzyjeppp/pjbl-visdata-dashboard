@@ -59,7 +59,7 @@ Puji syukur kami panjatkan kehadirat Tuhan Yang Maha Esa atas selesainya penyusu
 
 Proyek ini bertujuan untuk merancang dan mengembangkan Dashboard Visualisasi Data Mobilitas Transportasi di Daerah Istimewa Yogyakarta menggunakan pendekatan _User-Centered Design_ (UCD). Kami menyadari sepenuhnya bahwa keberhasilan proyek ini tidak lepas dari bantuan berbagai pihak. Oleh karena itu, kami ingin menyampaikan ucapan terima kasih kepada:
 
-1.  **Ibu Dosen Pengampu** mata kuliah Praktikum Visualisasi Data Universitas Teknologi Digital Indonesia (UTDI) atas bimbingan materi, arahan teknis, dan evaluasi berkelanjutan yang diberikan sepanjang semester.
+1.  **Bapak Bagas Triaji, S.Kom., M.Kom.**, selaku Dosen Pengampu mata kuliah Praktikum Visualisasi Data Universitas Teknologi Digital Indonesia (UTDI) atas bimbingan materi, arahan teknis, dan evaluasi berkelanjutan yang diberikan sepanjang semester.
 2.  **Rekan-Rekan Asisten Praktikum** yang telah mendampingi, memberikan saran pengembangan, serta membantu memvalidasi standardisasi penulisan linter dan kode.
 3.  **Para Responden Evaluasi Usability** (Dosen, Asisten, dan Teman Sekelas) yang telah meluangkan waktu mengisi Google Form evaluasi guna memberikan masukan berharga demi penyempurnaan rancangan dashboard kami.
 
