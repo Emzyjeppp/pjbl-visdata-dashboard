@@ -110,7 +110,7 @@ Volume kendaraan bermotor di Provinsi DI Yogyakarta meningkat setiap tahun. Data
 
 Selama ini, data statistika mobilitas seperti jumlah total kendaraan, indeks kepadatan, dan rata-rata penumpang Trans Jogja dipublikasikan secara terpisah dalam dokumen teks PDF yang tebal. Hal ini menyulitkan pengguna dalam menganalisis relasi data spasial secara cepat.
 
-Kelompok kami mengintegrasikan data sekunder riil tersebut ke dalam Dashboard Visualisasi Data Interaktif berbasis web. Data volume kendaraan bersumber dari Badan Pusat Statistik DIY (https://yogyakarta.bps.go.id), sedangkan data kemacetan, kecepatan, dan penumpang Trans Jogja bersumber dari Dinas Perhubungan DIY (https://dishub.jogjaprov.go.id). Kami menerapkan metode _User-Centered Design_ (UCD) untuk memperbaiki desain awal (V1) yang dinilai kaku menjadi dashboard interaktif (V2) dengan tambahan peta spasial SVG interaktif untuk menyaring data wilayah secara dinamis.
+Kelompok kami mengintegrasikan data sekunder riil tersebut ke dalam Dashboard Visualisasi Data Interaktif berbasis web. Data volume kendaraan bersumber dari Badan Pusat Statistik DIY (https://yogyakarta.bps.go.id), sedangkan data kemacetan, kecepatan, dan penumpang Trans Jogja bersumber dari Dinas Perhubungan DIY (https://dishub.jogjaprov.go.id). Kami menerapkan metode _User-Centered Design_ (UCD) untuk memperbaiki desain awal (V1) yang memiliki visualisasi peta kurang optimal dan kontras warna rendah menjadi dashboard interaktif (V2) dengan penyempurnaan peta spasial SVG interaktif serta perbaikan kontras visual untuk menyaring data wilayah secara dinamis.
 
 ### 1.2 Rumusan Masalah
 
@@ -125,7 +125,7 @@ Rumusan masalah dalam proyek PjBL ini meliputi:
 Tujuan dari pelaksanaan proyek PjBL ini adalah:
 
 1.  Membangun Dashboard Visualisasi Data Transportasi Yogyakarta yang memiliki nilai kegunaan (_usability_) tinggi berdasarkan hasil survei pengguna.
-2.  Merapikan antarmuka visual menggunakan konsep _dark mode_ dan memastikan responsivitas pada perangkat mobile.
+2.  Menerapkan metode UCD untuk membuat antarmuka halaman web yang mudah digunakan (user-friendly) dan responsif.
 3.  Menyajikan integrasi data lalu lintas Yogyakarta dan trayek penumpang Trans Jogja secara valid dan transparan.
 
 ### 1.4 Batasan Masalah
