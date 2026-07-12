@@ -39,7 +39,7 @@
 1.  Nama : MUHAMMAD JEPRI (NIM : 255410014)
 2.  Nama : AS-SAMMIRUL RIZKY (NIM : 235410063)
 
-Menyatakan bahwa Laporan Project-Based Learning (PjBL) ini telah diperiksa, disetujui, dan disahkan sebagai salah satu syarat pemenuhan tugas mata kuliah Praktikum Visualisasi Data pada Program Studi Informatika, Fakultas Teknologi Informasi, Universitas Teknologi Digital Indonesia.
+Menyatakan bahwa Laporan Project-Based Learning (PjBL) ini telah diperiksa, disetujui, dan disahkan sebagai syarat pemenuhan tugas mata kuliah Praktikum Visualisasi Data pada Program Studi Informatika, Fakultas Teknologi Informasi, Universitas Teknologi Digital Indonesia.
 
 Yogyakarta, 2026
 
@@ -48,22 +48,22 @@ Dosen Pengampu Praktikum Visualisasi Data
 
 _(Tanda Tangan)_
 
-**Nama Dosen Pengampu Matakuliah**  
+**Bagas Triaji, S.Kom., M.Kom.**  
 NIDN/NIK. ........................
 
 <div style="page-break-after: always;"></div>
 
 ## KATA PENGANTAR
 
-Puji syukur kami panjatkan kehadirat Tuhan Yang Maha Esa atas selesainya penyusunan Laporan Proyek _Project-Based Learning_ (PjBL) untuk mata kuliah Praktikum Visualisasi Data ini dengan tepat waktu.
+Penyusunan Laporan Proyek _Project-Based Learning_ (PjBL) untuk mata kuliah Praktikum Visualisasi Data ini selesai tepat waktu.
 
-Proyek ini bertujuan untuk merancang dan mengembangkan Dashboard Visualisasi Data Mobilitas Transportasi di Daerah Istimewa Yogyakarta menggunakan pendekatan _User-Centered Design_ (UCD). Kami menyadari sepenuhnya bahwa keberhasilan proyek ini tidak lepas dari bantuan berbagai pihak. Oleh karena itu, kami ingin menyampaikan ucapan terima kasih kepada:
+Proyek ini bertujuan mengembangkan Dashboard Visualisasi Data Mobilitas Transportasi di Daerah Istimewa Yogyakarta menggunakan pendekatan _User-Centered Design_ (UCD). Penyusunan laporan ini selesai berkat bantuan berbagai pihak. Penulis menyampaikan terima kasih kepada:
 
-1.  **Bapak Bagas Triaji, S.Kom., M.Kom.**, selaku Dosen Pengampu mata kuliah Praktikum Visualisasi Data Universitas Teknologi Digital Indonesia (UTDI) atas bimbingan materi, arahan teknis, dan evaluasi berkelanjutan yang diberikan sepanjang semester.
-2.  **Rekan-Rekan Asisten Praktikum** yang telah mendampingi, memberikan saran pengembangan, serta membantu memvalidasi standardisasi penulisan linter dan kode.
-3.  **Para Responden Evaluasi Usability** (Dosen, Asisten, dan Teman Sekelas) yang telah meluangkan waktu mengisi Google Form evaluasi guna memberikan masukan berharga demi penyempurnaan rancangan dashboard kami.
+1.  **Bapak Bagas Triaji, S.Kom., M.Kom.**, selaku Dosen Pengampu mata kuliah Praktikum Visualisasi Data Universitas Teknologi Digital Indonesia (UTDI) atas bimbingan materi, arahan teknis, dan evaluasi berkala sepanjang semester.
+2.  **Asisten Praktikum** yang mendampingi, memberikan masukan, serta memvalidasi standardisasi penulisan linter dan kode.
+3.  **Para Responden Evaluasi Usability** (Dosen, Asisten, dan Rekan Mahasiswa) yang meluangkan waktu mengisi kuesioner evaluasi untuk menyempurnaan rancangan dashboard ini.
 
-Kami berharap laporan ini dapat memberikan manfaat akademis serta menjadi referensi bagi rekan mahasiswa lainnya dalam bidang visualisasi data interaktif.
+Laporan ini diharapkan memberikan manfaat akademis serta menjadi referensi dalam bidang visualisasi data interaktif.
 
 Yogyakarta, 2026
 
@@ -106,35 +106,35 @@ Yogyakarta, 2026
 
 ### 1.1 Latar Belakang
 
-Daerah Istimewa Yogyakarta (DIY) merupakan salah satu provinsi di Indonesia dengan tingkat pertumbuhan volume kendaraan bermotor yang sangat pesat. Sebagai pusat pariwisata, pendidikan, dan kebudayaan, mobilitas harian penduduk lokal serta wisatawan asing di koridor-koridor utama DIY kerap memicu kemacetan parah di jam sibuk pagi dan sore hari. Untuk mengatasi tantangan lalu lintas ini, pemetaan spasial dan visualisasi data yang terperinci sangat diperlukan oleh Dinas Perhubungan dan pemangku kebijakan.
+Volume kendaraan bermotor di Provinsi DI Yogyakarta meningkat setiap tahun. Data registrasi BPS menunjukkan total kendaraan aktif mencapai 3.566.423 unit pada tahun 2025. Peningkatan ini menyebabkan kepadatan lalu lintas pada ruas jalan utama, terutama saat jam sibuk pagi dan sore hari. Kondisi ini menuntut Dinas Perhubungan untuk mengambil keputusan secara cepat berdasarkan pemetaan lalu lintas yang akurat.
 
-Selama ini, data statistik mobilitas (seperti total kendaraan terdaftar, indeks kepadatan ruas jalan, dan rata-rata jumlah penumpang angkutan umum massal Trans Jogja) dipublikasikan secara terpisah dalam dokumen teks PDF yang tebal, seperti buku _Transportasi Dalam Angka (TDA)_ oleh Dishub DIY atau buku statistik BPS DIY. Format penyajian statis ini menyulitkan pengguna dalam menangkap relasi data spasial secara cepat dan intuitif.
+Selama ini, data statistika mobilitas seperti jumlah total kendaraan, indeks kepadatan, dan rata-rata penumpang Trans Jogja dipublikasikan secara terpisah dalam dokumen teks PDF yang tebal. Hal ini menyulitkan pengguna dalam menganalisis relasi data spasial secara cepat.
 
-Oleh karena itu, proyek PjBL ini bertujuan untuk mengintegrasikan data sekunder riil tersebut ke dalam sebuah Dashboard Visualisasi Data Interaktif berbasis web. Data volume kendaraan didasarkan pada publikasi Badan Pusat Statistik DIY (https://yogyakarta.bps.go.id), sedangkan data kemacetan, kecepatan, dan penumpang Trans Jogja bersumber dari sistem informasi Dinas Perhubungan DIY (https://dishub.jogjaprov.go.id). Melalui pendekatan _User-Centered Design_ (UCD), dashboard awal (V1) yang dinilai kaku dan membingungkan direkonstruksi menjadi dashboard yang ramah pengguna (V2) dengan penambahan Peta Spasial SVG interaktif dan koordinasi grafik dinamis guna meningkatkan kegunaan (_usability_) sistem.
+Kelompok kami mengintegrasikan data sekunder riil tersebut ke dalam Dashboard Visualisasi Data Interaktif berbasis web. Data volume kendaraan bersumber dari Badan Pusat Statistik DIY (https://yogyakarta.bps.go.id), sedangkan data kemacetan, kecepatan, dan penumpang Trans Jogja bersumber dari Dinas Perhubungan DIY (https://dishub.jogjaprov.go.id). Kami menerapkan metode _User-Centered Design_ (UCD) untuk memperbaiki desain awal (V1) yang dinilai kaku menjadi dashboard interaktif (V2) dengan tambahan peta spasial SVG interaktif untuk menyaring data wilayah secara dinamis.
 
 ### 1.2 Rumusan Masalah
 
-Berdasarkan latar belakang di atas, rumusan masalah dalam proyek PjBL ini adalah:
+Rumusan masalah dalam proyek PjBL ini meliputi:
 
-1.  Bagaimana merancang dashboard visualisasi data transportasi DIY yang interaktif dan mudah dipahami sesuai pedoman _User-Centered Design_ (UCD)?
-2.  Bagaimana mengatasi kelemahan interaksi dropdown kaku pada rancangan awal (V1) melalui implementasi peta spasial SVG interaktif?
-3.  Bagaimana menyinkronkan data visualisasi pada grafik dengan data sekunder riil bersumber dari BPS DIY dan Dishub DIY?
+1.  Bagaimana merancang dashboard visualisasi data transportasi DIY yang interaktif sesuai pedoman _User-Centered Design_ (UCD)?
+2.  Bagaimana mengatasi kendala interaksi dropdown kaku pada rancangan awal (V1) menggunakan peta spasial SVG interaktif?
+3.  Bagaimana menyinkronkan data grafik dengan data riil dari BPS DIY dan Dishub DIY?
 
 ### 1.3 Tujuan Perencanaan Project-Based Learning
 
 Tujuan dari pelaksanaan proyek PjBL ini adalah:
 
-1.  Membangun Dashboard Visualisasi Data Transportasi Yogyakarta yang memiliki nilai kegunaan (_usability score_) tinggi berdasarkan hasil survei pengguna.
-2.  Menerapkan metode UCD untuk menghasilkan antarmuka visual yang estetik (_glassmorphism dark mode_) dan responsif pada perangkat mobile.
-3.  Menyajikan integrasi data lalu lintas harian Yogyakarta dan trayek penumpang Trans Jogja 2025 secara valid dan transparan.
+1.  Membangun Dashboard Visualisasi Data Transportasi Yogyakarta yang memiliki nilai kegunaan (_usability_) tinggi berdasarkan hasil survei pengguna.
+2.  Merapikan antarmuka visual menggunakan konsep _dark mode_ dan memastikan responsivitas pada perangkat mobile.
+3.  Menyajikan integrasi data lalu lintas Yogyakarta dan trayek penumpang Trans Jogja secara valid dan transparan.
 
 ### 1.4 Batasan Masalah
 
-Ruang lingkup proyek visualisasi data ini dibatasi oleh beberapa ketentuan:
+Ruang lingkup proyek visualisasi data ini dibatasi oleh ketentuan berikut:
 
-1.  **Wilayah Kajian**: Dibatasi pada 5 wilayah kabupaten/kota di DI Yogyakarta (Sleman, Bantul, Kota Yogyakarta, Gunungkidul, Kulon Progo), dengan visualisasi detail dinamis difokuskan pada Sleman, Bantul, dan Kota Yogyakarta.
-2.  **Sumber Data**: Menggunakan data sekunder resmi dari tabel Registrasi Kendaraan ERI BPS DIY 2025 dan Buku _Transportasi Dalam Angka 2025_ Dinas Perhubungan DIY.
-3.  **Teknologi**: Menggunakan HTML5, CSS3 vanilla (tanpa framework eksternal), JavaScript ES6 murni, Chart.js untuk grafik, dan berkas SVG untuk peta spasial.
+1.  **Wilayah Kajian**: Wilayah kabupaten/kota di DI Yogyakarta, dengan fokus visualisasi detail pada Sleman, Bantul, dan Kota Yogyakarta.
+2.  **Sumber Data**: Data sekunder resmi dari tabel Registrasi Kendaraan ERI BPS DIY 2025 dan Buku _Transportasi Dalam Angka 2025_ Dinas Perhubungan DIY.
+3.  **Teknologi**: HTML5, CSS3 vanilla, JavaScript murni, Chart.js untuk grafik, dan berkas SVG untuk peta spasial.
 
 <div style="page-break-after: always;"></div>
 
@@ -142,11 +142,11 @@ Ruang lingkup proyek visualisasi data ini dibatasi oleh beberapa ketentuan:
 
 ### 2.1 User-Centered Design (UCD)
 
-_User-Centered Design_ (UCD) adalah metodologi perancangan antarmuka pengguna yang memposisikan kebutuhan, batasan, dan perilaku pengguna akhir sebagai pusat dari setiap keputusan desain. Teori dan prinsip tahapan UCD ini diadopsi dari standar internasional Interaction Design Foundation (https://www.interaction-design.org). Proses UCD melibatkan siklus analisis kebutuhan, desain alternatif, pembuatan prototipe, dan evaluasi kegunaan secara berulang (_iterative design_). Melalui pendekatan ini, pengembang dapat menjamin produk akhir mudah dioperasikan dan meminimalisir kesalahan interpretasi data.
+_User-Centered Design_ (UCD) adalah metodologi perancangan antarmuka pengguna yang memposisikan kebutuhan, batasan, dan perilaku pengguna akhir sebagai pusat dari setiap keputusan desain. Teori dan prinsip tahapan UCD ini diadopsi dari standar internasional Interaction Design Foundation (https://www.interaction-design.org). Siklus perancangan melibatkan analisis kebutuhan, desain solusi, pembuatan prototipe, dan evaluasi kegunaan secara berulang. Melalui pendekatan ini, pengembang dapat menjamin produk akhir mudah dioperasikan dan mengurangi kesalahan interpretasi data.
 
 ### 2.2 Usability Testing & Kuesioner Usability
 
-_Usability Testing_ adalah metode pengujian untuk mengukur seberapa mudah suatu sistem digunakan oleh pengguna akhir. Metodologi pengujian usability ini merujuk pada standar industri yang ditetapkan oleh Nielsen Norman Group (https://www.nngroup.com). Sesuai lembar kuesioner evaluasi UAS, terdapat 5 kriteria utama skala likert (1-5) yang dinilai:
+_Usability Testing_ adalah metode pengujian untuk mengukur tingkat kemudahan penggunaan sistem oleh pengguna akhir. Metodologi pengujian usability ini merujuk pada standar industri yang ditetapkan oleh Nielsen Norman Group (https://www.nngroup.com). Sesuai lembar kuesioner evaluasi UAS, terdapat 5 kriteria utama skala likert (1-5) yang dinilai:
 
 1.  **Akurasi Data**: Kesesuaian informasi di layar dengan data riil atau sumber terpercaya.
 2.  **Kemudahan Navigasi**: Kecepatan menemukan KPI utama dalam waktu kurang dari 5 detik.
@@ -156,7 +156,7 @@ _Usability Testing_ adalah metode pengujian untuk mengukur seberapa mudah suatu 
 
 ### 2.3 Data Spasial & Peta SVG
 
-Data spasial merepresentasikan posisi geografis dari suatu objek. Penggunaan format _Scalable Vector Graphics_ (SVG) untuk peta interaktif memungkinkan penggambaran batas-batas wilayah administrasi kabupaten Yogyakarta secara tajam di segala resolusi layar. Berkas SVG bertindak sebagai elemen DOM yang dapat berinteraksi langsung dengan JavaScript untuk mendeteksi aksi klik pengguna (_event listener_) guna memicu pembaruan filter wilayah (_cross-filtering_).
+Data spasial merepresentasikan posisi geografis dari suatu objek. Penggunaan format _Scalable Vector Graphics_ (SVG) untuk peta interaktif memungkinkan penggambaran batas wilayah administrasi kabupaten Yogyakarta secara tajam di segala resolusi layar. Berkas SVG bertindak sebagai elemen DOM yang dapat berinteraksi langsung dengan JavaScript untuk mendeteksi aksi klik pengguna guna memicu pembaruan filter wilayah (_cross-filtering_).
 
 ### 2.4 Chart.js & Visualisasi Interaktif
 
@@ -182,12 +182,12 @@ Berikut adalah alur penyusunan proyek PjBL visualisasi data ini:
 
 ### 3.2 Tahapan Penerapan UCD
 
-Penerapan UCD dilakukan melalui 4 langkah iteratif:
+Penerapan UCD dilakukan melalui 4 langkah:
 
 1.  **Memahami Konteks Pengguna**: Dosen, asisten, dan mahasiswa membutuhkan penyajian informasi ringkas tanpa perlu membaca PDF tebal.
-2.  **Menentukan Persyaratan Bisnis & Data**: Mengumpulkan data kuantitatif dari dokumen Dishub DIY dan BPS DIY.
+2.  **Menentukan Persyaratan Data**: Mengumpulkan data kuantitatif dari dokumen Dishub DIY dan BPS DIY.
 3.  **Membuat Solusi Desain**: Membangun visualisasi dashboard teroptimasi (V2) dengan skema warna kontras tinggi Yogyakarta (Gold & Royal Blue).
-4.  **Mengevaluasi Desain**: Melakukan pengumpulan umpan balik responden secara kuantitatif melalui pengisian kuesioner lokal untuk memvalidasi kenaikan skor kepuasan.
+4.  **Mengevaluasi Desain**: Mengumpulkan umpan balik responden secara kuantitatif melalui pengisian kuesioner lokal untuk memvalidasi kenaikan skor kepuasan.
 
 <div style="page-break-after: always;"></div>
 
@@ -195,11 +195,11 @@ Penerapan UCD dilakukan melalui 4 langkah iteratif:
 
 ### 4.1 Analisis Dashboard V1 (Sebelum Perbaikan)
 
-Pada rancangan awal (V1), tata letak dashboard dirancang sangat sederhana dengan latar belakang putih bawaan browser. Navigasi filter kabupaten diletakkan pada menu dropdown di atas halaman. Pengguna mengeluhkan beberapa kendala krusial:
+Pada rancangan awal (V1), tata letak dashboard dirancang sederhana dengan latar belakang putih bawaan browser. Navigasi filter kabupaten diletakkan pada menu dropdown di atas halaman. Pengguna menemukan beberapa kendala:
 
 - Bagan data bertumpuk di layar kecil dan legenda grafik membingungkan.
 - Tidak adanya peta geografis Yogyakarta sehingga pemfilteran tidak kontekstual.
-- Tingkat kepuasan visual sangat rendah (rata-rata skor kegunaan hanya bernilai **3.0 dari 5.0**).
+- Tingkat kepuasan visual rendah (rata-rata skor kegunaan bernilai **3.0 dari 5.0**).
 
 ### 4.2 Evaluasi Usability Kuesioner Responden
 
@@ -214,11 +214,11 @@ Setelah diuji oleh 3 profil responden utama (Dosen Pengampu, Asisten Praktikum, 
 | **Kecepatan Performa**    |              4.0              |              5.0              |
 | **RATA-RATA GLOBAL**      |         **3.0 / 5.0**         |         **4.9 / 5.0**         |
 
-Perubahan penilaian ini divisualisasikan secara langsung menggunakan diagram radar (_Radar Chart_), membuktikan adanya lonjakan kepuasan pengguna setelah diterapkannya perbaikan desain berbasis UCD pada V2.
+Perubahan penilaian ini divisualisasikan secara langsung menggunakan diagram radar (_Radar Chart_), membuktikan kenaikan tingkat kepuasan pengguna setelah penerapan perbaikan desain berbasis UCD pada V2.
 
 ### 4.3 Perancangan Perbaikan Dashboard V2 (Sesudah Perbaikan)
 
-Perbaikan antarmuka pada Dashboard V2 difokuskan pada peningkatan estetika dan kemudahan interaksi:
+Perbaikan antarmuka pada Dashboard V2 difokuskan pada estetika dan kemudahan interaksi:
 
 1.  **Peta Spasial DIY Interaktif (SVG)**: Menggantikan fungsi dropdown kaku. Mengklik area kabupaten Sleman, Bantul, atau Kota Yogyakarta pada peta secara otomatis memfilter seluruh grafik di sebelah kanan.
 2.  **Antarmuka Premium (Dark Glassmorphism)**: Latar belakang gelap (`#0a0e17`) dipadukan dengan panel transparan ber-blur tinggi (`backdrop-filter`) meningkatkan fokus pembacaan data.
@@ -227,7 +227,7 @@ Perbaikan antarmuka pada Dashboard V2 difokuskan pada peningkatan estetika dan k
 
 ### 4.4 Integrasi Data Riil BPS & Dishub DIY
 
-Untuk membuang kerancuan informasi, seluruh angka statistik di dashboard disinkronkan secara eksak dengan tabel publikasi BPS DIY dan Dishub DIY tahun 2025:
+Untuk membuang kerancuan informasi, seluruh angka statistik di dashboard disinkronkan dengan tabel publikasi BPS DIY dan Dishub DIY tahun 2025:
 
 - **Total Kendaraan Terdaftar**: Sleman (1.345.363 unit), Bantul (929.440 unit), Kota Yogyakarta (622.190 unit), Gunungkidul (383.182 unit), Kulon Progo (286.248 unit). Total DIY = **3.566.423 unit**.
 - **Indeks Kepadatan & Kecepatan**: Menggunakan rujukan data V/C ratio jalan provinsi (Sleman: 72%, Bantul: 55%, Kota Yogyakarta: 85%).
@@ -239,15 +239,15 @@ Untuk membuang kerancuan informasi, seluruh angka statistik di dashboard disinkr
 
 ### 5.1 Simpulan
 
-Berdasarkan seluruh proses perancangan, implementasi, dan pengujian dalam proyek PjBL Visualisasi Data UAS ini, dapat ditarik beberapa simpulan:
+Berdasarkan proses perancangan, implementasi, dan pengujian dalam proyek PjBL Visualisasi Data UAS ini, kesimpulan yang dapat ditarik adalah:
 
-1.  Pendekatan _User-Centered Design_ (UCD) terbukti efektif meningkatkan kegunaan dashboard secara signifikan, ditandai dengan naiknya skor kepuasan global usability responden dari **3.0 (Cukup)** menjadi **4.9 (Sangat Baik)**.
-2.  Implementasi peta spasial SVG interaktif Yogyakarta sukses mempermudah proses penyaringan data spasial (_cross-filtering_) sehingga informasi lebih terfokus dan mudah dipahami.
+1.  Pendekatan _User-Centered Design_ (UCD) terbukti efektif meningkatkan kegunaan dashboard, ditandai dengan naiknya skor kepuasan global usability responden dari **3.0 (Cukup)** menjadi **4.9 (Sangat Baik)**.
+2.  Implementasi peta spasial SVG interaktif Yogyakarta mempermudah proses penyaringan data spasial (_cross-filtering_) sehingga informasi lebih terfokus dan mudah dipahami.
 3.  Integrasi dokumen PDF internal dari Dinas Perhubungan DIY (TDA 2025) ke dalam tautan dinamis dashboard menjamin akurasi dan transparansi data yang disajikan di depan dosen penguji.
 
 ### 5.2 Saran
 
-Beberapa saran yang dapat diajukan untuk pengembangan dashboard di masa depan meliputi:
+Saran yang dapat diajukan untuk pengembangan dashboard di masa depan meliputi:
 
 1.  **Integrasi Real-Time Data**: Mengganti data sekunder statis dengan integrasi API dinamis langsung dari sistem server ATCS Dinas Perhubungan DIY agar informasi kemacetan ter-update setiap menit.
 2.  **Penambahan Fitur Prakiraan (Forecasting)**: Menambahkan modul analisis prediksi berbasis kecerdasan buatan (_Machine Learning_) untuk memprakirakan titik kemacetan parah di masa mendatang berdasarkan data historis tahun-tahun sebelumnya.
