@@ -142,25 +142,19 @@ Ruang lingkup proyek visualisasi data ini dibatasi oleh ketentuan berikut:
 
 ### 2.1 User-Centered Design (UCD)
 
-_User-Centered Design_ (UCD) adalah metodologi perancangan antarmuka pengguna yang memposisikan kebutuhan, batasan, dan perilaku pengguna akhir sebagai pusat dari setiap keputusan desain. Teori dan prinsip tahapan UCD ini diadopsi dari standar internasional Interaction Design Foundation (https://www.interaction-design.org). Siklus perancangan melibatkan analisis kebutuhan, desain solusi, pembuatan prototipe, dan evaluasi kegunaan secara berulang. Melalui pendekatan ini, pengembang dapat menjamin produk akhir mudah dioperasikan dan mengurangi kesalahan interpretasi data.
+Metodologi _User-Centered Design_ (UCD) memposisikan kebutuhan pengguna akhir sebagai pusat keputusan desain (Interaction Design Foundation, https://www.interaction-design.org). Siklusnya meliputi analisis kebutuhan, desain solusi alternatif, pembuatan prototipe, dan evaluasi kegunaan secara berulang guna menjamin produk akhir mudah dioperasikan.
 
 ### 2.2 Usability Testing & Kuesioner Usability
 
-_Usability Testing_ adalah metode pengujian untuk mengukur tingkat kemudahan penggunaan sistem oleh pengguna akhir. Metodologi pengujian usability ini merujuk pada standar industri yang ditetapkan oleh Nielsen Norman Group (https://www.nngroup.com). Sesuai lembar kuesioner evaluasi UAS, terdapat 5 kriteria utama skala likert (1-5) yang dinilai:
-
-1.  **Akurasi Data**: Kesesuaian informasi di layar dengan data riil atau sumber terpercaya.
-2.  **Kemudahan Navigasi**: Kecepatan menemukan KPI utama dalam waktu kurang dari 5 detik.
-3.  **Fungsionalitas Filter**: Efektivitas tombol penyaring data.
-4.  **Kejelasan Visual**: Kenyamanan membaca grafik, teks, dan pilihan kontras warna.
-5.  **Kecepatan Performa**: Waktu muat data saat filter dioperasikan.
+_Usability Testing_ mengukur tingkat kemudahan penggunaan sistem oleh pengguna akhir berdasarkan standar Nielsen Norman Group (https://www.nngroup.com). Kuesioner evaluasi UAS mencakup 5 kriteria skala likert (1-5): (1) Akurasi data di layar dengan data riil, (2) Navigasi penemuan KPI utama di bawah 5 detik, (3) Fungsionalitas filter penyaring data, (4) Kejelasan visual grafik dan teks, serta (5) Kecepatan performa pemuatan data halaman.
 
 ### 2.3 Data Spasial & Peta SVG
 
-Data spasial merepresentasikan posisi geografis dari suatu objek. Penggunaan format _Scalable Vector Graphics_ (SVG) untuk peta interaktif memungkinkan penggambaran batas wilayah administrasi kabupaten Yogyakarta secara tajam di segala resolusi layar. Berkas SVG bertindak sebagai elemen DOM yang dapat berinteraksi langsung dengan JavaScript untuk mendeteksi aksi klik pengguna guna memicu pembaruan filter wilayah (_cross-filtering_).
+Data spasial merepresentasikan posisi geografis objek. Format _Scalable Vector Graphics_ (SVG) menyajikan visual batas wilayah kabupaten Yogyakarta secara tajam dan responsif di berbagai resolusi layar. Berkas SVG berinteraksi langsung dengan JavaScript sebagai elemen DOM untuk mendeteksi aksi klik guna memicu pembaruan filter wilayah (_cross-filtering_).
 
 ### 2.4 Chart.js & Visualisasi Interaktif
 
-Chart.js adalah pustaka JavaScript berbasis kanvas HTML5 yang ringan dan responsif untuk merender bagan statistik. Panduan dan konfigurasi rendering grafik interaktif merujuk pada dokumentasi resmi Chart.js (https://www.chartjs.org/docs). Dalam proyek ini, Chart.js digunakan untuk memvisualisasikan data runtun waktu (_time-series_) fluktuasi volume jalan raya menggunakan _Line Chart_ dan sebaran penumpang koridor Trans Jogja menggunakan _Bar Chart_.
+Chart.js adalah pustaka JavaScript berbasis kanvas HTML5 untuk merender bagan statistik (https://www.chartjs.org/docs). Kami menggunakan Chart.js untuk memvisualisasikan data runtun waktu fluktuasi volume jalan raya (_Line Chart_) dan sebaran rata-rata penumpang Trans Jogja per koridor (_Bar Chart_).
 
 <div style="page-break-after: always;"></div>
 
