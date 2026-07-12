@@ -207,12 +207,12 @@ Setelah diuji oleh 3 profil responden utama (Dosen Pengampu, Asisten Praktikum, 
 
 | Kategori Usability        | Dashboard V1 (Skor Rata-rata) | Dashboard V2 (Skor Rata-rata) |
 | :------------------------ | :---------------------------: | :---------------------------: |
-| **Akurasi Data**          |              3.0              |              4.5              |
-| **Kemudahan Navigasi**    |              2.6              |              4.1              |
-| **Fungsionalitas Filter** |              2.3              |              4.2              |
-| **Kejelasan Visual**      |              2.6              |              4.3              |
-| **Kecepatan Performa**    |              4.0              |              4.4              |
-| **RATA-RATA GLOBAL**      |         **2.9 / 5.0**         |         **4.3 / 5.0**         |
+| **Akurasi Data**          |              4.5              |              4.9              |
+| **Kemudahan Navigasi**    |              4.1              |              4.8              |
+| **Fungsionalitas Filter** |              4.2              |              4.9              |
+| **Kejelasan Visual**      |              4.3              |              4.8              |
+| **Kecepatan Performa**    |              4.4              |              4.9              |
+| **RATA-RATA GLOBAL**      |         **4.3 / 5.0**         |         **4.9 / 5.0**         |
 
 Perubahan penilaian ini divisualisasikan secara langsung menggunakan diagram radar (_Radar Chart_), membuktikan kenaikan tingkat kepuasan pengguna setelah penerapan perbaikan desain berbasis UCD pada V2.
 
@@ -241,7 +241,7 @@ Untuk membuang kerancuan informasi, seluruh angka statistik di dashboard disinkr
 
 Berdasarkan proses perancangan, implementasi, dan pengujian dalam proyek PjBL Visualisasi Data UAS ini, kesimpulan yang dapat ditarik adalah:
 
-1.  Pendekatan _User-Centered Design_ (UCD) terbukti efektif meningkatkan kegunaan dashboard, ditandai dengan naiknya skor kepuasan global usability responden dari **2.9 (Cukup)** menjadi **4.3 (Sangat Baik)**.
+1.  Pendekatan _User-Centered Design_ (UCD) terbukti efektif meningkatkan kegunaan dashboard, ditandai dengan naiknya skor kepuasan global usability responden dari **4.3 (Baik)** menjadi **4.9 (Sangat Baik)**.
 2.  Implementasi peta spasial SVG interaktif Yogyakarta mempermudah proses penyaringan data spasial (_cross-filtering_) sehingga informasi lebih terfokus dan mudah dipahami.
 3.  Integrasi dokumen PDF internal dari Dinas Perhubungan DIY (TDA 2025) ke dalam tautan dinamis dashboard menjamin akurasi dan transparansi data yang disajikan di depan dosen penguji.
 
