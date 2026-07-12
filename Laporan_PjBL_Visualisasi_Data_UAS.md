@@ -214,6 +214,10 @@ Perubahan penilaian ini divisualisasikan secara langsung menggunakan diagram rad
 
 Perbaikan antarmuka pada Dashboard V2 difokuskan pada estetika dan kemudahan interaksi:
 
+![Gambar 4.1 Tampilan Antarmuka Bagian Atas Dashboard V2](file:///C:/Users/jefry/.gemini/antigravity/brain/e7c2c714-3a9d-4e53-98fe-efd6acfda1fa/media__1783584578450.png)
+
+![Gambar 4.2 Tampilan Antarmuka Bagian Bawah Dashboard V2](file:///C:/Users/jefry/.gemini/antigravity/brain/e7c2c714-3a9d-4e53-98fe-efd6acfda1fa/media__1783584320621.png)
+
 1.  **Peta Spasial DIY Interaktif (SVG)**: Menggantikan fungsi dropdown kaku. Mengklik area kabupaten Sleman, Bantul, atau Kota Yogyakarta pada peta secara otomatis memfilter seluruh grafik di sebelah kanan.
 2.  **Antarmuka Premium (Dark Glassmorphism)**: Latar belakang gelap (`#0a0e17`) dipadukan dengan panel transparan ber-blur tinggi (`backdrop-filter`) meningkatkan fokus pembacaan data.
 3.  **KPI yang Jelas dan Terang**: Indikator utama diletakkan di bagian atas halaman dengan warna mencolok dilengkapi lencana (_badge_) tren.
