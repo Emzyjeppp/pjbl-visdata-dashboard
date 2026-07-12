@@ -212,16 +212,16 @@ Perubahan penilaian ini divisualisasikan secara langsung menggunakan diagram rad
 
 ### 4.3 Perancangan Perbaikan Dashboard V2 (Sesudah Perbaikan)
 
-Perbaikan antarmuka pada Dashboard V2 difokuskan pada estetika dan kemudahan interaksi:
+Perbaikan antarmuka pada Dashboard V2 difokuskan pada kemudahan penggunaan dan peningkatan kualitas visual:
 
 ![Gambar 4.1 Tampilan Antarmuka Bagian Atas Dashboard V2](file:///C:/Users/jefry/.gemini/antigravity/brain/e7c2c714-3a9d-4e53-98fe-efd6acfda1fa/media__1783584578450.png)
 
 ![Gambar 4.2 Tampilan Antarmuka Bagian Bawah Dashboard V2](file:///C:/Users/jefry/.gemini/antigravity/brain/e7c2c714-3a9d-4e53-98fe-efd6acfda1fa/media__1783584320621.png)
 
-1.  **Peta Spasial DIY Interaktif (SVG)**: Menggantikan fungsi dropdown kaku. Mengklik area kabupaten Sleman, Bantul, atau Kota Yogyakarta pada peta secara otomatis memfilter seluruh grafik di sebelah kanan.
-2.  **Antarmuka Premium (Dark Glassmorphism)**: Latar belakang gelap (`#0a0e17`) dipadukan dengan panel transparan ber-blur tinggi (`backdrop-filter`) meningkatkan fokus pembacaan data.
-3.  **KPI yang Jelas dan Terang**: Indikator utama diletakkan di bagian atas halaman dengan warna mencolok dilengkapi lencana (_badge_) tren.
-4.  **Responsif Mobile**: Menggunakan media query CSS untuk memastikan tata letak melipat secara presisi pada layar ponsel berlebar di bawah 768px.
+1.  **Peta Spasial DIY Interaktif (SVG)**: Menggantikan fungsi dropdown kaku. Mengklik area kabupaten pada peta menyaring data seluruh grafik secara otomatis. Kami mempertebal batas wilayah (2.2px), memperbesar label kabupaten (13px dengan outline hitam), serta menambahkan petunjuk penggunaan interaktif di atas peta untuk memudahkan pengguna.
+2.  **Keterbacaan dan Kontras Mode Gelap**: Menggunakan skema warna gelap dengan penyesuaian kontras tinggi pada teks. Kami meningkatkan kontras label sumbu grafik Chart.js (menjadi putih terang/bold) serta memperbesar ukuran font rujukan sumber data (0.85rem - 0.88rem) guna menjamin data terbaca sempurna.
+3.  **KPI yang Jelas dan Terang**: Indikator utama diletakkan di bagian atas halaman menggunakan warna kontras dilengkapi lencana tren kenaikan.
+4.  **Responsif Mobile**: Menggunakan media query CSS untuk memastikan tata letak halaman melipat secara presisi saat diakses melalui perangkat ponsel pintar (lebar layar di bawah 768px).
 
 ### 4.4 Integrasi Data Riil BPS & Dishub DIY
 
