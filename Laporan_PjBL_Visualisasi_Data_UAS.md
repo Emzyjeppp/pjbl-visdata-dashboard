@@ -199,7 +199,7 @@ Pada rancangan awal (V1), tata letak dashboard dirancang sederhana dengan latar 
 
 - Bagan data bertumpuk di layar kecil dan legenda grafik membingungkan.
 - Tidak adanya peta geografis Yogyakarta sehingga pemfilteran tidak kontekstual.
-- Tingkat kepuasan visual rendah (rata-rata skor kegunaan bernilai **3.0 dari 5.0**).
+- Rata-rata skor kegunaan awal bernilai **4.3 dari 5.0**, namun responden mencatat beberapa masukan penting terkait visualisasi peta dan kontras warna.
 
 ### 4.2 Evaluasi Usability Kuesioner Responden
 
