@@ -705,12 +705,12 @@ document.addEventListener("DOMContentLoaded", () => {
           y: {
             min: 0,
             max: 100,
-            grid: { color: "rgba(255, 255, 255, 0.04)" },
-            ticks: { color: "#8b949e", font: { family: "Plus Jakarta Sans", size: 9 } }
+            grid: { color: "rgba(255, 255, 255, 0.09)" },
+            ticks: { color: "#e2e8f0", font: { family: "Plus Jakarta Sans", size: 10, weight: "bold" } }
           },
           x: {
             grid: { display: false },
-            ticks: { color: "#8b949e", font: { family: "Plus Jakarta Sans", size: 9 } }
+            ticks: { color: "#e2e8f0", font: { family: "Plus Jakarta Sans", size: 10, weight: "bold" } }
           }
         }
       }
@@ -748,12 +748,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         scales: {
           y: {
-            grid: { color: "rgba(255, 255, 255, 0.04)" },
-            ticks: { color: "#8b949e", font: { family: "Plus Jakarta Sans", size: 9 } }
+            grid: { color: "rgba(255, 255, 255, 0.09)" },
+            ticks: { color: "#e2e8f0", font: { family: "Plus Jakarta Sans", size: 10, weight: "bold" } }
           },
           x: {
             grid: { display: false },
-            ticks: { color: "#8b949e", font: { family: "Plus Jakarta Sans", size: 9 } }
+            ticks: { color: "#e2e8f0", font: { family: "Plus Jakarta Sans", size: 10, weight: "bold" } }
           }
         }
       }

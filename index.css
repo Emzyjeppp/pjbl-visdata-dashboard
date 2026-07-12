@@ -947,9 +947,9 @@ body {
 
 /* Map paths aesthetics */
 .map-path {
-  fill: rgba(30, 41, 59, 0.7);
-  stroke: rgba(255, 255, 255, 0.15);
-  stroke-width: 1.5px;
+  fill: rgba(15, 23, 42, 0.95);
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 2.2px;
   cursor: pointer;
   transition: var(--transition-smooth);
   vector-effect: non-scaling-stroke;
@@ -1001,11 +1001,13 @@ body {
 
 /* Map label texts */
 .map-label {
-  fill: var(--text-primary);
+  fill: #ffffff;
   font-family: var(--font-title);
-  font-size: 11px;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 13px;
+  font-weight: 800;
+  paint-order: stroke fill;
+  stroke: #0a0e17;
+  stroke-width: 3.5px;
   pointer-events: none;
 }
 
