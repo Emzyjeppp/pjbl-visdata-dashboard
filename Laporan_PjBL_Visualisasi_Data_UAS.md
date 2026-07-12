@@ -193,7 +193,7 @@ Pada rancangan awal (V1), tata letak dashboard dirancang sederhana dengan latar 
 
 - Bagan data bertumpuk di layar kecil dan legenda grafik membingungkan.
 - Tidak adanya peta geografis Yogyakarta sehingga pemfilteran tidak kontekstual.
-- Rata-rata skor kegunaan awal bernilai **4.3 dari 5.0**, namun responden mencatat beberapa masukan penting terkait visualisasi peta dan kontras warna.
+- Responden mencatat beberapa masukan penting terkait visualisasi peta dan kontras warna pada evaluasi awal.
 
 ### 4.2 Evaluasi Usability Kuesioner Responden
 
@@ -239,7 +239,7 @@ Untuk membuang kerancuan informasi, seluruh angka statistik di dashboard disinkr
 
 Berdasarkan proses perancangan, implementasi, dan pengujian dalam proyek PjBL Visualisasi Data UAS ini, kesimpulan yang dapat ditarik adalah:
 
-1.  Pendekatan _User-Centered Design_ (UCD) terbukti efektif meningkatkan kegunaan dashboard, ditandai dengan naiknya skor kepuasan global usability responden dari **4.3 (Baik)** menjadi **4.9 (Sangat Baik)**.
+1.  Pendekatan _User-Centered Design_ (UCD) terbukti efektif meningkatkan kegunaan dashboard, ditandai dengan perolehan skor rata-rata usability global yang mencapai **4.9 / 5.0 (Sangat Baik)** pada evaluasi akhir.
 2.  Implementasi peta spasial SVG interaktif Yogyakarta mempermudah proses penyaringan data spasial (_cross-filtering_) sehingga informasi lebih terfokus dan mudah dipahami.
 3.  Integrasi dokumen PDF internal dari Dinas Perhubungan DIY (TDA 2025) ke dalam tautan dinamis dashboard menjamin akurasi dan transparansi data yang disajikan di depan dosen penguji.
 
